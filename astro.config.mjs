@@ -7,4 +7,5 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://nvodoor.github.io",
   integrations: [tailwind(), mdx(), sitemap()],
+  base: "base-ros-template",
 });
