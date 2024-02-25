@@ -1,19 +1,48 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
-</footer>
+---
+// @ts-ignore
+import links from '../content/links/footerLinks';
+import OpenNavLogo from '../assets/full-sticker-transparent.png'
+import { Picture } from "astro:assets";
+---
+
+
+
+    <footer class="mt-10 pb-5 px-8 pt-20 bg-cyan-400/70">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
+          <div class="font-semibold text-lg">
+            <Picture       
+              src={OpenNavLogo}
+              alt="Open Nav"
+              width="200"
+              loading="eager"
+              format="avif" 
+            />
+          </div>
+          <div class="grid grid-cols-3 justify-between gap-4">
+            {links.map(({ title, items }) => (
+              <ul>
+                <div
+                  class="mb-3 font-medium underline"
+                >
+                  {title}
+                </div>
+                {items.map((link) => (
+                  <li>
+                    <a
+                      class="py-1.5 font-normal hover:font-medium"
+                      href={link.src}
+                    >
+                      {link.title}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+          <div class="px-5 font-medium opacity-70 text-lg">
+            © Copyright 2023
+          </div>
+        </div>
+      </div>
+    </footer>
