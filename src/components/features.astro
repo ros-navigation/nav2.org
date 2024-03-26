@@ -4,40 +4,40 @@ import { Icon } from "astro-icon";
 
 const features = [
   {
-    title: "Reduce Collective Risk",
+    title: "Flexible Robot Behaviors",
     description:
-      "Control the robot to follows the path and dynamically adjust to avoid collision.",
-    icon: "bx:bxs-briefcase",
+      "Exploit Behavior Tree based executor model to design multiple complex robot behaviors",
+    icon: "binary-tree",
   },
   {
-    title: "Increase Collective Reliability",
+    title: "State of the Art Algorithms",
     description:
-      "Plan a complete path through the environment, even kinematically feasibly for large robots.",
-    icon: "bx:bxs-window-alt",
+      " Feasible route planning, predictive trajectory planning, dynamic obstacle avoidance & more",
+    icon: "path",
   },
   {
-    title: "Maps",
+    title: "All Robot Welcome",
     description:
-      "Load, serve, and store maps",
-    icon: "bx:bxs-data",
+      "Any shape or size; differential, omni, ackermann, or even legged",
+    icon: "leg-wheel",
   },
   {
-    title: "Supply Needed and Modern Capabilities",
+    title: "Easily Extensible",
     description:
-      "Build complicated and highly-customizable robot behaviors using behavior trees.",
-    icon: "bx:bxs-bot",
+      "Modular task server design empower application customizations and expansions.",
+    icon: "blocks",
   },
   {
-    title: "Visualization",
+    title: "Product-Grade Quality",
     description:
-      "Convert sensor data into an environmental model of the world",
-    icon: "bx:bxs-file-find",
+      "Deployed at scale by 100+ companies worldwide with high automated test coverage",
+    icon: "assembly-line",
   },
   {
-    title: "Localization",
+    title: "First-Class Support",
     description:
-      "Localize the robot on a provided map (SLAM provides the initial map)",
-    icon: "bx:bxs-user",
+      "Framework is actively maintained with professional support services available",
+    icon: "open-nav-wheel",
   },
 ];
 ---
@@ -55,8 +55,8 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-black rounded-full flex justify-center items-center  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white bg-black" height="24" width="24" name={item.icon} />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
