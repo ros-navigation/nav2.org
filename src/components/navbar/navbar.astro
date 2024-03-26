@@ -6,32 +6,44 @@ import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import StickerNavLogo from '../../assets/full-sticker-transparent.png';
 import Picture from "astro/components/Picture.astro";
 
+const DOCS = "Docs";
+
 const menuitems = [
   {
-    title: "Install",
+    title: "Getting Started",
+    path: "https://navigation.ros.org/getting_started/index.html",
+  },
+  {
+    title: "Concepts",
     path: "#",
     children: [
-      { title: "Action", path: "/" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-      { title: "404 Page", path: "/404" },
+      { title: "Navigation Concepts", path: "https://navigation.ros.org/concepts/index.html" },
+      { title: "Behavior Trees", path: "https://navigation.ros.org/behavior_trees/index.html" },
     ],
   },
   {
-    title: "Docs",
-    path: "/pricing",
+    title: "Tutorials",
+    path: "#",
+    children: [
+      { title: "First Time Robot Setup Guide", path: "https://navigation.ros.org/setup_guides/index.html" },
+      { title: "General Tutorials", path: "https://navigation.ros.org/tutorials/index.html" },
+      { title: "Plugin Tutorials", path: "https://navigation.ros.org/plugin_tutorials/index.html"}
+    ],
+  },
+  {
+    title: "Configuration",
+    path: "https://navigation.ros.org/configuration/index.html",
+    children: [
+      { title: "Tuning", path: "https://navigation.ros.org/tuning/index.html" }
+    ]
   },
   {
     title: "About",
-    path: "/about",
-  },
-  {
-    title: "Contribute",
-    path: "/contact",
-  },
-  {
-    title: "Blog",
-    path: "/blog",
+    path: "#",
+    children: [
+      { title: "Contact", path: "/contact" },
+      { title: "Robots", path: "/blog" },
+    ]
   },
 ];
 ---
@@ -70,11 +82,6 @@ const menuitems = [
                       href={item.path}
                       class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
                       <span> {item.title}</span>
-                      {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                          New
-                        </span>
-                      )}
                     </a>
                   </li>
                 )}
@@ -83,13 +90,13 @@ const menuitems = [
           }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" size="md" block>Get Involved</Link>
+          <Link href="#" size="md" block>{DOCS}</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="#" size="md">Get Involved</Link>
+        <Link href="#" size="md">{DOCS}</Link>
       </div>
     </div>
   </header>
