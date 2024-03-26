@@ -1,16 +1,68 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon";
+import { Picture } from "astro:assets";
+import ToyotaIcon from "assets/Toyota_logo.png";
+import Kiwibot from "assets/Kiwibot.png";
+import LG from "assets/LG-logo.png";
+import ElroyAir from "assets/ElroyAir.png";
+import AMD from "assets/AMD_Logo.png";
+import Bosch from "assets/Bosch-logo.png";
+
+const logoInfo = [
+  {
+    alt: "Toyota",
+    link: "https://www.toyotaforklift.com",
+    src: ToyotaIcon,
+    width: 134,
+  },
+  {
+    alt: "Kiwibot",
+    link:  "https://www.kiwibot.com/",
+    src: Kiwibot,
+    width: 134,
+  },
+  {
+    alt: "LG Electronics",
+    link: "https://www.lg.com/us/business/robots",
+    src: LG,
+    width: 134,
+  },
+  {
+    alt: "Bosch",
+    link: "https://www.bosch.us/",
+    src: Bosch,
+    width: 134,
+  },
+  {
+    alt: "Elroy Air",
+    link: "https://elroyair.com",
+    src: ElroyAir,
+    width: 134,
+  },
+  {
+    alt: "AMD",
+    link: "https://www.amd.com/en.html",
+    src: AMD,
+    width: 134,
+  },
+]
+const logoTitle = "Companies Using Open Nav";
 ---
 
-<div class="mt-24">
-  <h2 class="text-center text-slate-500">Our Sponsors</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Icon class="h-8 md:h-12" name="simple-icons:react" />
-    <Icon class="h-8 md:h-12" name="simple-icons:svelte" />
-    <Icon class="h-8 md:h-14" name="simple-icons:tailwindcss" />
-    <Icon class="h-8 md:h-16" name="simple-icons:alpinedotjs" />
-    <Icon class="h-8 md:h-12" name="simple-icons:vercel" />
-    <Icon class="h-8 md:h-12" name="simple-icons:astro" />
+<div class="mt-24 flex flex-col items-center justify-center">
+  <h2 class="text-center text-slate-500">{logoTitle}</h2>
+  <div class="flex w-3/4 gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+    {
+      logoInfo.map((item) => 
+        <a href={item.link}>
+        <Picture 
+          alt={item.alt} 
+          width={item.width} 
+          src={item.src}  
+          loading="eager" 
+          format="avif" />
+        </a>
+      )
+    }
   </div>
 </div>

@@ -1,0 +1,28 @@
+---
+// @ts-ignore
+import { Picture } from "astro:assets";
+
+const logoInfo = [
+];
+const logoTitle = "Our Sponsors";
+---
+
+<div class="mt-24 flex flex-col items-center justify-center">
+  <h2 class="text-center text-slate-500">{logoTitle}</h2>
+  <div
+    class="flex w-3/4 gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
+    {
+      logoInfo.map((item) => (
+        <a href={item.link}>
+          <Picture
+            alt={item.alt}
+            width={item.width}
+            src={item.src}
+            loading="eager"
+            format="avif"
+          />
+        </a>
+      ))
+    }
+  </div>
+</div>

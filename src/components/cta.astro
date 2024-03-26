@@ -1,16 +1,20 @@
 ---
 import Link from "./ui/link.astro";
+
+const CTATitle = "Powered By Open Navigation."
+const CTADescription = `Open Navigation’s mission is to democratize professional-quality mobile robotics technology to propel the industry forward. We develop and maintain critical pieces of open-source mobile robotics and ROS infrastructure via our Sponsors’ generous support. We also offer consulting and contracting services to help deploy or extend Nav2 (and related) for your product’s needs.`
+const CTAButton = "Learn More"
 ---
 
 <div
   class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
   <h2 class="text-white text-4xl md:text-6xl tracking-tight">
-    Built on ROS.
+    {CTATitle}
   </h2>
   <p class="text-slate-400 mt-4 text-lg md:text-xl">
-    Our mission is to accelerate robotics commercialization and applied research via the democratization of professional quality mobile robotics technologies and resources. We aim to establish open, community-driven collaborations within and between industry and academia to develop these industry standardized references.
+    {CTADescription}
   </p>
   <div class="flex mt-5">
-    <Link href="https://navigation.ros.org/getting_started/index.html" style="inverted">Get Started</Link>
+    <Link href=" https://www.opennav.org/" style="inverted">{CTAButton}</Link>
   </div>
 </div>

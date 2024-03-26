@@ -1,20 +1,24 @@
+---
+const { videoSrc, title, oneWord, description } = Astro.props;
+---
+
 <div class="h-full w-screen place-items-center bg-white py-8">
   <div class="container grid items-center relative lg:grid-cols-2">
     <div class="flex">
-      <iframe width="446" height="296" src="https://www.youtube.com/embed/CYaN43TJANc" title="Nav2 - Nova Carter Robot" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <video controls="" autoplay="" transition:persist width="446" height="296"><source src={videoSrc} type="video/mp4"></video>
     </div>
 
     <div class="text-center lg:text-left">
       <div
         class="flex items-center justify-center lg:justify-start font-medium text-sm mb-5">
-        Super Awesome Robots
+        {title}
     </div>
 
       <div  class="mb-8 leading-tight text-2xl font-bold">
-        That move around and get to places really quickly.
+        {oneWord}
       </div>
       <div class="lg:pr-20 font-normal">
-        Customize your robots, make them like Japanese Gundam bots. Spend time creating the Gundam of your dreams that can move on command. It's amazing. Just like the movies!
+        {description}
     </div>
   </div>
 </div>
