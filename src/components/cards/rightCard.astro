@@ -7,16 +7,18 @@ const { videoSrc, title, oneWord, description } = Astro.props;
     <div class="mb-8">
       <div
         class="flex items-center font-medium text-sm mb-5">
-        {title}
+        {oneWord}
       </div>
 
       <div class="mb-4 leading-tight text-2xl font-bold">
-        {oneWord}
+        {title}
       </div>
       <div class="lg:pr-32 font-normal">
         {description}
       </div>
     </div>
-      <video controls="" autoplay="" transition:persist width="446" height="296"><source src={videoSrc} type="video/mp4"></video>
+    <div class="flex">
+      <video controls={false} autoplay loop muted transition:persist width="446" height="296"><source src={videoSrc} type="video/mp4"></video>
+    </div>
   </div>
 </div>
