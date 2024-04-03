@@ -1,28 +1,76 @@
 ---
 // @ts-ignore
 import { Picture } from "astro:assets";
+import Dexory from "assets/dexory_logo.png";
+import NVIDIA from "assets/NVIDIA_logo.png";
+import Polymath from "assets/polymath.png";
+import Stereolabs from "assets/stereolabs_logo.png";
+import BarnOwl from "assets/barnowl.png";
+import Rover from "assets/Rover.png";
 
-const logoInfo = [
-];
 const logoTitle = "Our Sponsors";
+
+const platinumTitle = "Platinum";
+const goldTitle = "Gold";
+const silverTitle = "Silver";
+const friendsOfNav2 = "Friends of Nav2";
 ---
 
 <div class="mt-24 flex flex-col items-center justify-center">
-  <h2 class="text-center text-slate-500">{logoTitle}</h2>
+  <h1 class="text-center text-xl text-slate-500">{logoTitle}</h1>
   <div
-    class="flex w-3/4 gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    {
-      logoInfo.map((item) => (
-        <a href={item.link}>
-          <Picture
-            alt={item.alt}
-            width={item.width}
-            src={item.src}
-            loading="eager"
-            format="avif"
-          />
-        </a>
-      ))
-    }
+    class="flex flex-col w-1/2 justify-center items-center">
+    <h3 class="mt-5 text-slate-800 text-xl tracking-wider">{platinumTitle}</h3>
+    <a href="https://wwww.dexory.com/">
+    <Picture 
+      alt="Dexory" 
+      src={Dexory}  
+      loading="eager"
+      format="avif"
+      class="mt-[-10%]" />
+    </a>
+    <h3 class="text-slate-800 text-xl tracking-wider">{goldTitle}</h3>
+    <a href="https://developer.nvidia.com/isaac">
+    <Picture 
+      alt="NVIDIA" 
+      src={NVIDIA}
+      width=400
+      loading="eager" 
+      format="avif" />
+    </a>
+    <h3 class="text-slate-800 text-xl tracking-wider mt-5">{silverTitle}</h3>
+    <div class="flex justify-between items-center gap-8">
+      <a href=" https://www.polymathrobotics.com/">
+        <Picture 
+        alt="Polymath" 
+        src={Polymath}
+        width=250
+        loading="eager" 
+        format="avif" />
+      </a>
+      <a href="https://www.stereolabs.com/">
+        <Picture 
+        alt="Stereolabs" 
+        src={Stereolabs}
+        width=250
+        loading="eager" 
+        format="avif" />
+      </a>
+    </div>
+    <h4 class="text-slate-800 text-xl tracking-wider mt-5">{friendsOfNav2}</h4>
+    <div class="flex justify-between items-center gap-8">
+      <Picture 
+      alt="BarnOwl" 
+      src={BarnOwl}
+      width=125
+      loading="eager" 
+      format="avif" />
+      <Picture 
+      alt="Rover" 
+      src={Rover}
+      width=125
+      loading="eager" 
+      format="avif" />
+    </div>
   </div>
 </div>

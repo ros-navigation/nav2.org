@@ -32,9 +32,10 @@ const menuitems = [
   },
   {
     title: "Configuration",
-    path: "https://navigation.ros.org/configuration/index.html",
     children: [
-      { title: "Tuning", path: "https://navigation.ros.org/tuning/index.html" }
+      { title: "Tuning", path: "https://navigation.ros.org/tuning/index.html" },
+      { title: "Configuration", path: "https://navigation.ros.org/configuration/index.html", },
+      { title: "Plugins", path: "https://navigation.ros.org/plugins/index.html"}
     ]
   },
   {
@@ -96,7 +97,7 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="#" size="md">{DOCS}</Link>
+        <Link href="https://navigation.ros.org/getting_started/index.html" size="md">{DOCS}</Link>
       </div>
     </div>
   </header>

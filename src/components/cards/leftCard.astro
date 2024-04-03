@@ -5,17 +5,16 @@ const { videoSrc, title, oneWord, description } = Astro.props;
 <div class="h-full place-items-center bg-white py-8">
   <div class="container grid items-center relative lg:grid-cols-2">
     <div class="flex">
-      <video controls="" autoplay="" transition:persist width="446" height="296"><source src={videoSrc} type="video/mp4"></video>
+      <video controls={false} autoplay loop muted transition:persist width="446" height="296"><source src={videoSrc} type="video/mp4"></video>
     </div>
-
     <div class="text-center lg:text-left">
       <div
         class="flex items-center justify-center lg:justify-start font-medium text-sm mb-5">
-        {title}
+        {oneWord}
     </div>
 
       <div  class="mb-8 leading-tight text-2xl font-bold">
-        {oneWord}
+        {title}
       </div>
       <div class="lg:pr-20 font-normal">
         {description}
