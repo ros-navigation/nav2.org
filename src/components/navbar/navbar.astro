@@ -3,30 +3,29 @@ import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import StickerNavLogo from '../../assets/full-sticker-transparent.png';
+import StickerNavLogo from "../../assets/full-sticker-transparent.png";
 import Picture from "astro/components/Picture.astro";
 import headerLinks from "content/links/headerLinks";
 
 const DOCS = "Docs";
-
 ---
 
-<Container class="bg-cyan-400/70">
+<Container class="bg-cyan-400/70 w-full z-50">
   <header class="flex flex-col lg:flex-row justify-between items-center">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <Picture       
+      <div class="flex w-full lg:w-auto items-center justify-between z-50">
+        <Picture
           src={StickerNavLogo}
           alt="Nav Balloon Logo"
           width="200"
           loading="eager"
-          format="avif" 
+          format="avif"
         />
-        <div class="block lg:hidden">
+        <div class="block lg:hidden bg-cyan-400/70 z-50">
           <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 z-50">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             headerLinks.map((item, index) => (
@@ -57,9 +56,12 @@ const DOCS = "Docs";
         </div>
       </MenuItems>
     </Astronav>
-    <div>
+    <div class="z-50">
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="https://navigation.ros.org/getting_started/index.html" size="md">{DOCS}</Link>
+        <Link
+          href="https://navigation.ros.org/getting_started/index.html"
+          size="md">{DOCS}</Link
+        >
       </div>
     </div>
   </header>
