@@ -1,42 +1,43 @@
 ---
 import { Picture } from "astro:assets";
 // import Nav2image from "assets/nav2_logo_powered.png";
-import Nav2image from "../icons/nav_2.svg"; 
+import Nav2image from "../icons/nav_2.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
+import HeroVideo from "assets/videos/hero_video.mp4";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={Nav2image}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
+class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+<video
+  controls={false}
+  autoplay
+  class="object-cover lg:h-[504px] h-[364px] md:h-[464px] w-full top-20 absolute right-0 left-0 bottom-0"
+  loop
+  muted
+  transition:persist><source src={HeroVideo} type="video/mp4" /></video
+>
+<div class="z-10">
+  <h1
+    class="text-xl text-white lg:text-5xl 2xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+    Nav2 - Your Open Source Navigation Framework
+  </h1>
+  <p class="text-xs sm:text-md md:text-lg text-white mt-4 max-w-xl">
+    Nav2 is the professionally-supported successor of the ROS Navigation Stack
+    deploying the same kinds of technology powering Autonomous Vehicles brought
+    down, optimized, and reworked for mobile and surface robotics.
+  </p>
+  <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <Link
+      size="lg"
+      style="primary"
+      rel="noopener"
+      href="https://github.com/ros-planning/navigation2"
+      class="flex gap-1 items-center justify-center"
+      target="_blank">
+      <Icon class="text-white w-4 h-4" name="bx:bxl-github" />
+      GitHub Repo
+    </Link>
   </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Nav2 - Your Open Source Navigation Framework
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Nav2 is the professionally-supported successor of the ROS Navigation Stack deploying the same kinds of technology powering Autonomous Vehicles brought down, optimized, and reworked for mobile and surface robotics. 
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/ros-planning/navigation2"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
-    </div>
-  </div>
+</div>
 </main>
