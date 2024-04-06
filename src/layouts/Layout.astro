@@ -8,18 +8,15 @@ export interface Props {
   title: string;
 }
 
-
-const { title } = Astro.props;
-
 const makeTitle = "Nav2 - Nav2 1.0.0 documentation";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="../../public/nav2_48x48.png" />
+    <link rel="icon" type="image/svg+xml" href="/nav2.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
@@ -37,7 +34,7 @@ const makeTitle = "Nav2 - Nav2 1.0.0 documentation";
           url: "https://navigation.ros.org/index.html",
           type: "website",
           title: `Nav2 - Nav2 1.0.0 documentation`,
-          image: "../../public/nav2_48x48.png",
+          image: "/nav2.ico",
         },
         image: {
           alt: "OpenNav Homepage Screenshot",
