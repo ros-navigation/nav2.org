@@ -7,6 +7,7 @@ import Polymath from "assets/polymath.png";
 import Stereolabs from "assets/stereolabs_logo.png";
 import BarnOwl from "assets/barnowl.png";
 import Rover from "assets/Rover.png";
+import Link from "@components/ui/link.astro";
 
 const logoTitle = "Our Sponsors";
 
@@ -14,63 +15,84 @@ const platinumTitle = "Platinum";
 const goldTitle = "Gold";
 const silverTitle = "Silver";
 const friendsOfNav2 = "Friends of Nav2";
+
+const sponsorNav2 = "Sponsor Nav2";
 ---
 
 <div class="mt-24 mb-12 flex flex-col items-center justify-center">
-  <h1 class="text-center text-5xl text-blackGrey">{logoTitle}</h1>
-  <div
-    class="flex flex-col w-1/2 justify-center items-center">
+  <h1 class="text-center font-bold text-5xl text-blackGrey">{logoTitle}</h1>
+  <div class="flex flex-col w-1/2 justify-center items-center">
     <h3 class="mt-5 text-slate-800 text-xl tracking-wider">{platinumTitle}</h3>
     <a href="https://www.dexory.com/">
-    <Picture 
-      alt="Dexory" 
-      src={Dexory}  
-      width=900
-      loading="eager"
-      format="avif"/>
+      <Picture
+        alt="Dexory"
+        src={Dexory}
+        width="900"
+        loading="eager"
+        format="avif"
+      />
     </a>
     <h3 class="text-slate-800 text-xl tracking-wider">{goldTitle}</h3>
     <a href="https://developer.nvidia.com/isaac">
-    <Picture 
-      alt="NVIDIA" 
-      src={NVIDIA}
-      width=500
-      loading="eager" 
-      format="avif" />
+      <Picture
+        alt="NVIDIA"
+        src={NVIDIA}
+        width="500"
+        loading="eager"
+        format="avif"
+      />
     </a>
     <h3 class="text-slate-800 text-xl tracking-wider mt-5">{silverTitle}</h3>
     <div class="flex justify-between items-center gap-16">
       <a href=" https://www.polymathrobotics.com/">
-        <Picture 
-        alt="Polymath" 
-        src={Polymath}
-        width=250
-        loading="eager" 
-        format="avif" />
+        <Picture
+          alt="Polymath"
+          src={Polymath}
+          width="250"
+          loading="eager"
+          format="avif"
+        />
       </a>
       <a href="https://www.stereolabs.com/">
-        <Picture 
-        alt="Stereolabs" 
-        src={Stereolabs}
-        width=250
-        loading="eager" 
-        format="avif" />
+        <Picture
+          alt="Stereolabs"
+          src={Stereolabs}
+          width="250"
+          loading="eager"
+          format="avif"
+        />
       </a>
     </div>
-    <h3 class="text-slate-800 text-xl tracking-wider mt-[16px]">{friendsOfNav2}</h3>
+    <h3 class="text-slate-800 text-xl tracking-wider mt-[16px]">
+      {friendsOfNav2}
+    </h3>
     <div class="flex justify-between items-center gap-8 mt-5">
-      <Picture 
-      alt="BarnOwl" 
-      src={BarnOwl}
-      width=125
-      loading="eager" 
-      format="avif" />
-      <Picture 
-      alt="Rover" 
-      src={Rover}
-      width=125
-      loading="eager" 
-      format="avif" />
+      <Picture
+        alt="BarnOwl"
+        src={BarnOwl}
+        width="125"
+        loading="eager"
+        format="avif"
+      />
+      <Picture
+        alt="Rover"
+        src={Rover}
+        width="125"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+    <div class="mt-10">
+      <Link
+        size="lg"
+        style="primary"
+        rel="noopener"
+        class="flex gap-1 items-center justify-center"
+        target="_blank"
+        href="https://www.opennav.org/sponsorship"
+      >
+        {sponsorNav2}
+      </Link>
     </div>
   </div>
 </div>
