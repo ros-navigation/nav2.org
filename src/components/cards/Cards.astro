@@ -5,7 +5,7 @@ import LeftCard from "./leftCard.astro";
 import cardItems from "content/contentItems/cardItems";
 ---
 
-<div class="max-w-full">
+<div class="flex flex-col w-full justify-center items-center">
   {
     cardItems.map((item, index) => (
       index % 2 === 0 ? 
