@@ -4,19 +4,21 @@ const { videoSrc, title, oneWord, description } = Astro.props;
 
 <div class="h-full place-items-center bg-white py-8">
   <div
-    class="container flex items-center gap-10 sm:gap-40 max-sm:flex-col max-sm:w-[20rem]">
-    <div class="max-sm:text-center mb-8 w-[446px] max-sm:w-[20rem]">
-      <div class="flex items-center max-sm:justify-center font-medium text-sm mb-5">
+    class="container items-center justify-between sm:gap-24 flex max-sm:flex-col max-sm:w-[20rem]">
+    <div class="max-sm:text-center mb-8 max-sm:w-[20rem] w-[50%]">
+      <div
+        class="flex items-center max-sm:justify-center font-medium text-sm mb-5">
         {oneWord}
       </div>
-      <div class="mb-4 text-blackGrey leading-tight text-2xl font-bold">
+      <div
+        class="mb-4 text-blackGrey leading-tight text-2xl font-bold">
         {title}
       </div>
-      <div class="lg:pr-32 font-normal">
+      <div class="font-normal">
         {description}
       </div>
     </div>
-    <div class="flex max-sm:order-1 max-sm:w-[20rem]">
+    <div class="flex w-[50%] max-sm:order-1 max-sm:w-[20rem]">
       <video
         controls={false}
         autoplay
