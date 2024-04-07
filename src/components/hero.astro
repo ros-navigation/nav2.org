@@ -1,23 +1,20 @@
 ---
-import { Picture } from "astro:assets";
-// import Nav2image from "assets/nav2_logo_powered.png";
-import Nav2image from "../icons/nav_2.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 import HeroVideo from "assets/videos/hero_video.mp4";
 ---
 
 <main
-class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+class="place-items-center">
 <video
   controls={false}
   autoplay
-  class="object-cover lg:h-[504px] h-[364px] md:h-[464px] w-full top-20 absolute right-0 left-0 bottom-0"
+  class="object-cover 2xl:h-[720px] xl:h-[560px] lg:h-[504px] h-[364px] md:h-[464px] w-full"
   loop
   muted
   transition:persist><source src={HeroVideo} type="video/mp4" /></video
 >
-<div class="z-10">
+<div class="z-10 absolute top-40 bottom-0 right-0 sm:left-20 max-sm:text-center max-sm:px-4">
   <h1
     class="text-xl text-white lg:text-5xl 2xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
     Nav2 - Your Autonomous Navigation Framework
@@ -25,7 +22,7 @@ class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <p class="text-xs sm:text-md md:text-lg text-white mt-4 max-w-xl">
     Nav2 is the go-to industry-standard mobile robot navigation system, deploying Autonomous Vehicle technologies brought down, reworked, and optimized for mobile and surface robotics. As the successor to the ROS Navigation Stack, Nav2 builds on 15 years of heritage and is accelerating the robotics industry.
   </p>
-  <div class="mt-6 flex flex-col sm:flex-row gap-3">
+  <div class="mt-6 flex gap-3 max-sm:justify-center">
     <Link
       size="lg"
       style="primary"
