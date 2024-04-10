@@ -5,12 +5,6 @@ import AppFeaturesVideo from "assets/videos/application_features.mp4";
 
 const cardItems = [
   {
-    videoSrc: SensorsToggleVideo,
-    description: "Integrates with any type of sensor modality, perception model, semantic annotations, AI, and spatial intelligence to build the environmental model for planning & control. Provides default support for 2D, 3D lidars, depth cameras, sonars and ultrasonics, maps, semantic zones, and more!",
-    oneWord: "PERCEPTIVE",
-    title: "Multimodal Sensing Integrations",
-  },
-  {
     videoSrc: GrootVideo,
     description: "Many unique and complex robot behaviors may be designed using Behavior Trees in the application and navigation scopes. Model optimal robot behaviors to accomplish a broad range of tasks with state of the art & verifiable structures. Powered by industry-standard library, BehaviorTree.CPP.",
     oneWord: "INTELLIGENT",
@@ -33,6 +27,12 @@ const cardItems = [
     description: "Includes commonly needed and essential product capabilities on top of advanced navigation: auto-docking for charging and static infrastructure, collision monitoring, assisted teleoperation, waypoint execution, and more growing by the day.",
     oneWord: "POWERFUL",
     title: "Mature Application Capabilities"
+  },
+  {
+    videoSrc: SensorsToggleVideo,
+    description: "Integrates with any type of sensor modality, perception model, semantic annotations, AI, and spatial intelligence to build the environmental model for planning & control. Provides default support for 2D, 3D lidars, depth cameras, sonars and ultrasonics, maps, semantic zones, and more!",
+    oneWord: "PERCEPTIVE",
+    title: "Multimodal Sensing Integrations",
   },
   {
     videoSrc: "",
