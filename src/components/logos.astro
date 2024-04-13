@@ -17,7 +17,7 @@ const logoInfo = [
   },
   {
     alt: "Kiwibot",
-    link:  "https://www.kiwibot.com/",
+    link: "https://www.kiwibot.com/",
     src: Kiwibot,
     width: 134,
   },
@@ -45,24 +45,44 @@ const logoInfo = [
     src: AMD,
     width: 134,
   },
-]
+];
 const logoTitle = "Companies Using Nav2";
 ---
 
 <div class="mt-24 flex flex-col items-center justify-center">
   <h2 class="text-center text-slate-500">{logoTitle}</h2>
-  <div class="flex w-3/4 gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    {
-      logoInfo.map((item) => 
-        <a href={item.link}>
-        <Picture 
-          alt={item.alt} 
-          width={item.width} 
-          src={item.src}  
-          loading="eager" 
-          format="avif" />
-        </a>
-      )
-    }
+  <div class="relative flex flex-row sm:w-full overflow-x-hidden">
+    <div
+      class="py-12 sm:animate-marquee whitespace-nowrap sm:flex items-center">
+      {
+        logoInfo.map((item) => (
+          <a href={item.link} class="mx-10">
+            <Picture
+              alt={item.alt}
+              width={item.width}
+              src={item.src}
+              loading="eager"
+              format="png"
+            />
+          </a>
+        ))
+      }
+    </div>
+    <div
+      class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap sm:flex hidden items-center">
+      {
+        logoInfo.map((item) => (
+          <a href={item.link} class="mx-10">
+            <Picture
+              alt={item.alt}
+              src={item.src}
+              loading="eager"
+              format="png"
+              width={item.width}
+            />
+          </a>
+        ))
+      }
+    </div>
   </div>
 </div>
