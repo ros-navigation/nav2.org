@@ -1,3 +1,1 @@
-# ROS Base Template
-
-Base Template site for ROS project
+# nav2.org Landing Page
