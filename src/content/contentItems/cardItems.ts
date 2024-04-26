@@ -10,12 +10,12 @@ const cardItems = [
     oneWord: "INTELLIGENT",
     title: "Powered by Behavior Trees",
   },
-  {
-    videoSrc: "",
-    description: "Operates on a wide range of physical platforms and simulation engines including Gazebo Classic, Gazebo, Nvidia Isaac Sim, Unity, and more. Nav2 provides demos for Gazebo Classic and Gazebo with vendor-provided integrations for advanced photo-realistic simulation.",
-    oneWord: "ADAPTABLE",
-    title: "Hardware and Simulator Agnostic",
-  },
+  // {
+  //   videoSrc: "",
+  //   description: "Operates on a wide range of physical platforms and simulation engines including Gazebo Classic, Gazebo, Nvidia Isaac Sim, Unity, and more. Nav2 provides demos for Gazebo Classic and Gazebo with vendor-provided integrations for advanced photo-realistic simulation.",
+  //   oneWord: "ADAPTABLE",
+  //   title: "Hardware and Simulator Agnostic",
+  // },
   {
     videoSrc: PlanningControlVideo,
     description: "Deploys modern Autonomous Vehicles technologies which are optimized and reworked for the unique needs of mobile robotics in dynamic environments. Fully leverages mobility’s semantics and unique constraints to provide best-in-class behavior for a wide range of robots, applications, and environments.",
@@ -34,12 +34,12 @@ const cardItems = [
     oneWord: "PERCEPTIVE",
     title: "Multimodal Sensing Integrations",
   },
-  {
-    videoSrc: "",
-    description: "Out-of-the-box raw data and navigation process visualizations with Rviz - including panels to issue commands, select algorithms, store/load waypoint information, and display state metadata for a polished getting started and debugging experience.",
-    oneWord: "EASY TO USE",
-    title: "3D Visualization and Command & Control",
-  },
+  // {
+  //   videoSrc: "",
+  //   description: "Out-of-the-box raw data and navigation process visualizations with Rviz - including panels to issue commands, select algorithms, store/load waypoint information, and display state metadata for a polished getting started and debugging experience.",
+  //   oneWord: "EASY TO USE",
+  //   title: "3D Visualization and Command & Control",
+  // },
 ]
 
 export default cardItems;
