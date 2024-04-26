@@ -32,8 +32,8 @@ const headerLinks = [
     title: "About",
     path: "#",
     children: [
-      { title: "Contact", path: "/contact" },
-      { title: "Robots", path: "/blog" },
+      { title: "Contact", path: "https://navigation.ros.org/about/index.html" },
+      { title: "Robots", path: "https://navigation.ros.org/about/robots.html" },
     ]
   },
 ];
