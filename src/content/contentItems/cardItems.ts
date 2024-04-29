@@ -2,6 +2,7 @@ import GrootVideo from "assets/videos/groot2.mp4";
 import PlanningControlVideo from "assets/videos/planning_control.mp4";
 import SensorsToggleVideo from "assets/videos/sensors_toggle.mp4";
 import AppFeaturesVideo from "assets/videos/application_features.mp4";
+import VizVideo from "assets/videos/visualization.mp4";
 
 const cardItems = [
   {
@@ -34,12 +35,12 @@ const cardItems = [
     oneWord: "PERCEPTIVE",
     title: "Multimodal Sensing Integrations",
   },
-  // {
-  //   videoSrc: "",
-  //   description: "Out-of-the-box raw data and navigation process visualizations with Rviz - including panels to issue commands, select algorithms, store/load waypoint information, and display state metadata for a polished getting started and debugging experience.",
-  //   oneWord: "EASY TO USE",
-  //   title: "3D Visualization and Command & Control",
-  // },
+  {
+    videoSrc: VizVideo,
+    description: "Out-of-the-box raw data and navigation process visualizations with Rviz - including panels to issue commands, select algorithms, store/load waypoint information, and display state metadata for a polished getting started and debugging experience.",
+    oneWord: "EASY TO USE",
+    title: "3D Visualization and Command & Control",
+  },
 ]
 
 export default cardItems;
