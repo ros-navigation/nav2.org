@@ -1,39 +1,39 @@
 const headerLinks = [
   {
     title: "Getting Started",
-    path: "https://navigation.ros.org/getting_started/index.html",
+    path: "https://docs.nav2.org/getting_started/index.html",
   },
   {
     title: "Concepts",
     path: "#",
     children: [
-      { title: "Navigation Concepts", path: "https://navigation.ros.org/concepts/index.html" },
-      { title: "Behavior Trees", path: "https://navigation.ros.org/behavior_trees/index.html" },
+      { title: "Navigation Concepts", path: "https://docs.nav2.org/concepts/index.html" },
+      { title: "Behavior Trees", path: "https://docs.nav2.org/behavior_trees/index.html" },
     ],
   },
   {
     title: "Tutorials",
     path: "#",
     children: [
-      { title: "First Time Robot Setup Guide", path: "https://navigation.ros.org/setup_guides/index.html" },
-      { title: "General Tutorials", path: "https://navigation.ros.org/tutorials/index.html" },
-      { title: "Plugin Tutorials", path: "https://navigation.ros.org/plugin_tutorials/index.html" }
+      { title: "First Time Robot Setup Guide", path: "https://docs.nav2.org/setup_guides/index.html" },
+      { title: "General Tutorials", path: "https://docs.nav2.org/tutorials/index.html" },
+      { title: "Plugin Tutorials", path: "https://docs.nav2.org/plugin_tutorials/index.html" }
     ],
   },
   {
     title: "Configuration",
     children: [
-      { title: "Tuning", path: "https://navigation.ros.org/tuning/index.html" },
-      { title: "Configuration", path: "https://navigation.ros.org/configuration/index.html", },
-      { title: "Plugins", path: "https://navigation.ros.org/plugins/index.html" }
+      { title: "Tuning", path: "https://docs.nav2.org/tuning/index.html" },
+      { title: "Configuration", path: "https://docs.nav2.org/configuration/index.html", },
+      { title: "Plugins", path: "https://docs.nav2.org/plugins/index.html" }
     ]
   },
   {
     title: "About",
     path: "#",
     children: [
-      { title: "Contact", path: "https://navigation.ros.org/about/index.html" },
-      { title: "Robots", path: "https://navigation.ros.org/about/robots.html" },
+      { title: "Contact", path: "https://docs.nav2.org/about/index.html" },
+      { title: "Robots", path: "https://docs.nav2.org/about/robots.html" },
     ]
   },
 ];
