@@ -5,7 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://open-navigation.github.io",
+  site: 'https://docs.nav2.org/'
   integrations: [tailwind(), mdx(), sitemap()],
-  base: "nav2.org",
 });
