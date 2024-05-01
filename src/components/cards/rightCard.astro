@@ -3,8 +3,7 @@ const { videoSrc, title, oneWord, description } = Astro.props;
 ---
 
 <div class="h-full place-items-center bg-white py-8">
-  <div
-    class="container items-center justify-between sm:gap-24 flex max-sm:flex-col max-sm:w-[20rem]">
+  <div class="container items-center justify-between sm:gap-24 flex max-sm:flex-col max-sm:w-[20rem]">
     <div class="max-sm:text-center mb-8 max-sm:w-[20rem] w-[50%]">
       <div
         class="flex items-center max-sm:justify-center font-medium text-sm mb-5">
@@ -24,7 +23,7 @@ const { videoSrc, title, oneWord, description } = Astro.props;
         autoplay
         loop
         muted
-        transition:persist
+        playsinline
         height="296"><source src={videoSrc} type="video/mp4" /></video
       >
     </div>
