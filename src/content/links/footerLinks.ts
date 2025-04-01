@@ -4,7 +4,7 @@ const links = [
       items: [
         { title: "Getting Started", src: "https://docs.nav2.org/getting_started/index.html"  },
         { title: "Development Guide", src: "https://docs.nav2.org/development_guides/index.html" },
-        { title: "Robots Using", src: "https://docs.nav2.org/about/robots.html"},
+        { title: "Robots Using", src: "/robots"},
       ],
     },
     {
