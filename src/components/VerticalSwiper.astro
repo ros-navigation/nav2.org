@@ -1,0 +1,17 @@
+---
+import VerticalSwiperComponent from './VerticalSwiper';
+
+interface Props {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+  direction: 'up' | 'down';
+}
+
+const { images, direction } = Astro.props;
+---
+
+<div class="h-full">
+  <VerticalSwiperComponent client:load images={images} direction={direction} />
+</div> 

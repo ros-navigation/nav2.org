@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "strictNullChecks": true,
-    "types": ["astro/client"],
+    "types": ["astro/client", "react", "react/jsx-runtime"],
     "paths": {
       "@lib/*": ["lib/*"],
       "@utils/*": ["utils/*"],
@@ -12,6 +12,14 @@
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"],
       "@icons/*": ["icons/*"],
-    }
+    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   }
 }
