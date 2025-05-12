@@ -4,6 +4,7 @@ interface Props {
   images: {
     src: string;
     alt: string;
+    url: string;
   }[];
   direction: 'up' | 'down';
 }
@@ -47,13 +48,15 @@ export default function VerticalSwiper({ images, direction }: Props) {
         style={{ scrollBehavior: 'auto' }}
       >
         {images.map((image) => (
-          <div key={image.src} className="h-[30vh] mb-2">
+          <div key={image.src} className="w-full mb-2">
+            <a href={image.url} target="_blank" rel="noopener noreferrer">
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-auto object-contain rounded-lg"
               loading="lazy"
             />
+            </a>
           </div>
         ))}
       </div>

@@ -1,7 +1,6 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
-import ScrollingColumn from "@components/ScrollingColumn.astro";
 import VerticalSwiper from "@components/VerticalSwiper.astro";
 import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/robots";
 
@@ -10,6 +9,7 @@ import { robotImages, robotImages2, robotImages3, robotImages4 } from "../conten
 
 <Layout title="Robots Using">
   <Container>
+    <h1 class="text-center mt-8 font-bold text-5xl text-blackGrey">Robots Using</h1>
     <div class="h-screen grid grid-cols-4 gap-4 py-8 overflow-hidden">
       <VerticalSwiper images={robotImages} direction="up" />
       <VerticalSwiper images={robotImages2} direction="down" />
