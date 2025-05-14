@@ -44,7 +44,7 @@ export default function VerticalSwiper({ images, direction }: Props) {
     <div className="h-screen overflow-hidden">
       <div 
         ref={containerRef}
-        className="h-full overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        className="h-full overflow-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         style={{ scrollBehavior: 'auto' }}
       >
         {images.map((image) => (
