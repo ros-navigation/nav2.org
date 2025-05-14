@@ -12,7 +12,9 @@ const { videoSrc, title, oneWord, description } = Astro.props;
         loop
         muted
         playsinline
-        height="296"><source src={videoSrc} type="video/mp4" /></video
+        height="296"
+        class="rounded-lg"
+        ><source src={videoSrc} type="video/mp4" /></video
       >
     </div>
     <div class="text-center lg:text-left max-sm:w-[20rem] w-[50%]">
