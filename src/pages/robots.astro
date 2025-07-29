@@ -3,7 +3,7 @@ import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
 import VerticalSwiper from "@components/VerticalSwiper.astro";
 import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/robots";
-
+import ReactSwiper from "@components/ReactSwiper.tsx";
 
 ---
 
@@ -14,7 +14,11 @@ import { robotImages, robotImages2, robotImages3, robotImages4 } from "../conten
       <VerticalSwiper images={robotImages} direction="up" />
       <VerticalSwiper images={robotImages2} direction="down" />
       <VerticalSwiper images={robotImages3} direction="up" />
-      <VerticalSwiper images={robotImages4} direction="down" />
+      <ReactSwiper client:load images={robotImages4} />
     </div>
   </Container>
 </Layout>
+
+<script is:inline>
+  console.log(window.innerHeight, window.innerWidth);
+</script>
