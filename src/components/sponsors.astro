@@ -4,8 +4,10 @@ import { Picture } from "astro:assets";
 import Dexory from "assets/dexory_logo.png";
 import NVIDIA from "assets/NVIDIA_logo.png";
 import Polymath from "assets/polymath.png";
+import AMD from  "assets/AMD_Logo.png";
 import Stereolabs from "assets/stereolabs_logo.png";
 import ThreeLaws from "assets/3laws_logo.png";
+import Staer from "assets/Staer_logo.png";
 import BarnOwl from "assets/barnowl.png";
 import Rover from "assets/Rover.png";
 import Link from "@components/ui/link.astro";
@@ -53,6 +55,15 @@ const sponsorNav2 = "Sponsor Nav2";
           format="avif"
         />
       </a>
+      <a href="https://www.amd.com/en/solutions/industrial/robotics.html">
+        <Picture
+          alt="AMD"
+          src={AMD}
+          width="450"
+          loading="eager"
+          format="avif"
+        />
+      </a>
     </div>
     <h3 class="text-slate-800 text-xl tracking-wider mt-5">{silverTitle}</h3>
     <div class="flex justify-between items-center gap-16">
@@ -69,6 +80,15 @@ const sponsorNav2 = "Sponsor Nav2";
         <Picture
           alt="3Laws Robotics"
           src={ThreeLaws}
+          width="200"
+          loading="eager"
+          format="avif"
+        />
+      </a>
+      <a href="https://staer.ai/">
+        <Picture
+          alt="Staer AI"
+          src={Staer}
           width="200"
           loading="eager"
           format="avif"
