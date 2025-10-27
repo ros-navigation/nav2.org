@@ -10,11 +10,11 @@ import ReactSwiper from "@components/ReactSwiper.tsx";
 <Layout title="Robots Using">
   <Container>
     <h1 class="text-center mt-8 font-bold text-5xl text-blackGrey">Robots Using</h1>
-    <div class="h-screen grid grid-cols-4 gap-4 py-8 overflow-hidden">
-      <VerticalSwiper images={robotImages} direction="up" />
-      <VerticalSwiper images={robotImages2} direction="down" />
-      <VerticalSwiper images={robotImages3} direction="up" />
-      <ReactSwiper client:load images={robotImages4} />
+    <div class="md:h-screen h-[40vh] grid grid-cols-4 gap-4 py-8 overflow-hidden">
+      <ReactSwiper client:load images={robotImages} direction="up" />
+      <ReactSwiper client:load images={robotImages2} direction="down" />
+      <ReactSwiper client:load images={robotImages3} direction="up" />
+      <ReactSwiper client:load images={robotImages4} direction="down" />
     </div>
   </Container>
 </Layout>

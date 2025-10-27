@@ -8,9 +8,10 @@ interface ImageProps {
 
 interface Props {
   images: ImageProps[];
+  direction?: 'up' | 'down';
 }
 
-export default function SwipeCarousel({ images }: Props) {
+export default function SwipeCarousel({ images, direction = 'up' }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,21 +21,31 @@ export default function SwipeCarousel({ images }: Props) {
       const contentHeight = content.offsetHeight;
       
       // Set the animation duration based on content height
-      const duration = Math.max(contentHeight * 20, 10000); // 20ms per pixel, minimum 10s
+      const duration = Math.max(contentHeight * 40, 10000); // 10ms per pixel, minimum 10s
       
-      container.style.animation = `scroll ${duration}ms linear infinite`;
+      const animationName = direction === 'down' ? 'scrollDown' : 'scrollUp';
+      container.style.animation = `${animationName} ${duration}ms linear infinite`;
     }
-  }, []);
+  }, [direction]);
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="md:h-screen h-[50vh] overflow-hidden">
       <style>{`
-        @keyframes scroll {
+        @keyframes scrollUp {
           0% {
             transform: translateY(0);
           }
           100% {
             transform: translateY(-50%);
+          }
+        }
+        
+        @keyframes scrollDown {
+          0% {
+            transform: translateY(-50%);
+          }
+          100% {
+            transform: translateY(0);
           }
         }
         
@@ -59,7 +70,7 @@ export default function SwipeCarousel({ images }: Props) {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-auto object-contain rounded-lg transition-transform duration-300 hover:scale-105"
+                  className="w-full h-auto object-contain rounded-lg transition-transform duration-300"
                   loading="lazy"
                 />
               </a>
@@ -72,7 +83,7 @@ export default function SwipeCarousel({ images }: Props) {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-auto object-contain rounded-lg transition-transform duration-300 hover:scale-105"
+                  className="w-full h-auto object-contain rounded-lg transition-transform duration-300"
                   loading="lazy"
                 />
               </a>
