@@ -1,24 +1,63 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
-import VerticalSwiper from "@components/VerticalSwiper.astro";
 import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/robots";
 import ReactSwiper from "@components/ReactSwiper.tsx";
+
+// For 2 carousels (mobile): combine images
+const mobileCarousel1 = [...robotImages, ...robotImages2];
+const mobileCarousel2 = [...robotImages3, ...robotImages4];
+
+// For 3 carousels (tablets): redistribute robotImages4 equally to first 3
+// Split robotImages4 (7 images) into 3 parts: 2, 2, 3
+const tabletCarousel1 = [...robotImages, ...robotImages4.slice(0, 2)];
+const tabletCarousel2 = [...robotImages2, ...robotImages4.slice(2, 4)];
+const tabletCarousel3 = [...robotImages3, ...robotImages4.slice(4, 7)];
 
 ---
 
 <Layout title="Robots Using">
   <Container>
-    <h1 class="text-center mt-8 font-bold text-5xl text-blackGrey">Robots Using</h1>
-    <div class="md:h-screen h-[40vh] grid grid-cols-4 gap-4 py-8 overflow-hidden">
-      <ReactSwiper client:load images={robotImages} direction="up" />
-      <ReactSwiper client:load images={robotImages2} direction="down" />
-      <ReactSwiper client:load images={robotImages3} direction="up" />
-      <ReactSwiper client:load images={robotImages4} direction="down" />
+    <div class="flex justify-center mt-8">
+      <h1 class="text-center font-medium text-5xl text-white bg-black rounded-lg px-6 py-4">Robots Using</h1>
+    </div>    
+    {/* Mobile: 2 carousels */}
+    <div class="md:hidden grid grid-cols-2 gap-4 py-8 overflow-hidden h-[40vh]">
+      <div>
+        <ReactSwiper client:load images={mobileCarousel1} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={mobileCarousel2} direction="down" />
+      </div>
+    </div>
+
+    {/* Tablet: 3 carousels */}
+    <div class="hidden md:grid lg:hidden md:h-screen grid-cols-3 gap-4 py-8 overflow-hidden">
+      <div>
+        <ReactSwiper client:load images={tabletCarousel1} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={tabletCarousel2} direction="down" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={tabletCarousel3} direction="up" />
+      </div>
+    </div>
+
+    {/* Desktop: 4 carousels */}
+    <div class="hidden lg:grid lg:h-screen grid-cols-4 gap-4 py-8 overflow-hidden">
+      <div>
+        <ReactSwiper client:load images={robotImages} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages2} direction="down" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages3} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages4} direction="down" />
+      </div>
     </div>
   </Container>
 </Layout>
-
-<script is:inline>
-  console.log(window.innerHeight, window.innerWidth);
-</script>

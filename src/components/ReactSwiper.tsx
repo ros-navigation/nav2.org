@@ -21,9 +21,17 @@ export default function SwipeCarousel({ images, direction = 'up' }: Props) {
       const contentHeight = content.offsetHeight;
       
       // Set the animation duration based on content height
-      const duration = Math.max(contentHeight * 40, 10000); // 10ms per pixel, minimum 10s
+      const duration = Math.max(contentHeight * 20, 2000); // 20ms per pixel, minimum 1s (faster speed)
       
       const animationName = direction === 'down' ? 'scrollDown' : 'scrollUp';
+      
+      // Set initial position for scrollDown to ensure seamless loop
+      if (direction === 'down') {
+        container.style.transform = 'translateY(-50%)';
+      } else {
+        container.style.transform = 'translateY(0)';
+      }
+      
       container.style.animation = `${animationName} ${duration}ms linear infinite`;
     }
   }, [direction]);
@@ -32,19 +40,19 @@ export default function SwipeCarousel({ images, direction = 'up' }: Props) {
     <div className="md:h-screen h-[50vh] overflow-hidden">
       <style>{`
         @keyframes scrollUp {
-          0% {
+          from {
             transform: translateY(0);
           }
-          100% {
+          to {
             transform: translateY(-50%);
           }
         }
         
         @keyframes scrollDown {
-          0% {
+          from {
             transform: translateY(-50%);
           }
-          100% {
+          to {
             transform: translateY(0);
           }
         }
