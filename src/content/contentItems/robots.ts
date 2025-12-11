@@ -1,11 +1,20 @@
+import Dexory from "assets/robotsUsing/robotImages1/dexory.png";
+import Polymath from "assets/robotsUsing/robotImages1/polymath.png";
+import Firefly from "assets/robotsUsing/robotImages2/firefly.png";
+import Kiwibot from "assets/robotsUsing/robotImages2/kiwibot.png";
+import Seasony from "assets/robotsUsing/robotImages3/seasony.png";
+import Pixel from "assets/robotsUsing/robotImages3/pixel.png";
+import Tri from "assets/robotsUsing/robotImages4/tri.png";
+import Wyca from "assets/robotsUsing/robotImages4/wyca.png";
+
 export const robotImages = [
   {
-    src: "https://docs.nav2.org/_images/dexory.png",
+    src: Dexory,
     alt: "Dexory",
     url: "https://www.dexory.com/",
   },
   {
-    src: "https://docs.nav2.org/_images/polymath.png",
+    src: Polymath,
     alt: "Polymath",
     url: "https://www.polymathrobotics.com/",
   },
@@ -48,12 +57,12 @@ export const robotImages = [
 
 export const robotImages2 = [
   {
-    src: "https://docs.nav2.org/_images/firefly.png",
+    src: Firefly,
     alt: "Firefly",
     url: "https://fireflyautomatix.com/m220/",
   },
   {
-    src: "https://docs.nav2.org/_images/kiwibot.png",
+    src: Kiwibot,
     alt: "Kiwibot",
     url: "https://www.kiwibot.com/",
   },
@@ -91,12 +100,12 @@ export const robotImages2 = [
 
 export const robotImages3 = [
   {
-    src: "https://docs.nav2.org/_images/seasony.png",
+    src: Seasony,
     alt: "Seasony",
     url: "https://www.seasony.io/",
   },
   {
-    src: "https://docs.nav2.org/_images/pixel.png",
+    src: Pixel,
     alt: "Pixel",
     url: "https://pixel-robotics.eu/",
   },
@@ -129,12 +138,12 @@ export const robotImages3 = [
 
 export const robotImages4 = [
   {
-    src: "https://docs.nav2.org/_images/tri.png",
+    src: Tri,
     alt: "Tri",
     url: "https://www.tri.global/news/toyota-introduces-tris-t-tr1-a-virtual-mobility-2019-7-22/",
   },
   {
-    src: "https://docs.nav2.org/_images/wyca.png",
+    src: Wyca,
     alt: "Wyca",
     url: "https://www.wyca-robotics.fr/",
   },

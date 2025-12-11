@@ -1,7 +1,8 @@
+import type { ImageMetadata } from 'astro';
 import { useEffect, useRef } from 'react';
 
 interface ImageProps {
-  src: string;
+  src: string | ImageMetadata;
   alt: string;
   url: string;
 }
@@ -13,6 +14,17 @@ interface Props {
 
 export default function SwipeCarousel({ images, direction = 'up' }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Helper function to get image src string from ImageMetadata or string
+  const getImageSrc = (src: string | ImageMetadata): string => {
+    return typeof src === 'string' ? src : src.src;
+  };
+
+  // Helper function to get a unique key for images
+  const getImageKey = (src: string | ImageMetadata, index: number): string => {
+    const srcString = typeof src === 'string' ? src : src.src;
+    return `${srcString}-${index}`;
+  };
 
   useEffect(() => {
     if (containerRef.current) {
@@ -73,10 +85,10 @@ export default function SwipeCarousel({ images, direction = 'up' }: Props) {
       >
         <div className="scroll-content">
           {images.map((image, index) => (
-            <div key={`${image.src}-${index}`} className="w-full mb-2">
+            <div key={getImageKey(image.src, index)} className="w-full mb-2">
               <a href={image.url} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={image.src}
+                  src={getImageSrc(image.src)}
                   alt={image.alt}
                   className="w-full h-auto object-contain rounded-lg transition-transform duration-300"
                   loading="lazy"
@@ -86,10 +98,10 @@ export default function SwipeCarousel({ images, direction = 'up' }: Props) {
           ))}
           {/* Duplicate content for seamless loop */}
           {images.map((image, index) => (
-            <div key={`${image.src}-duplicate-${index}`} className="w-full mb-2">
+            <div key={getImageKey(image.src, index) + '-duplicate'} className="w-full mb-2">
               <a href={image.url} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={image.src}
+                  src={getImageSrc(image.src)}
                   alt={image.alt}
                   className="w-full h-auto object-contain rounded-lg transition-transform duration-300"
                   loading="lazy"

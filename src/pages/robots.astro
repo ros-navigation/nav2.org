@@ -1,18 +1,27 @@
 ---
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
-import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/robots";
+import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/contentItems/robots";
 import ReactSwiper from "@components/ReactSwiper.tsx";
+
+// Helper function to evenly distribute items across carousels
+function distributeItems<T>(items: T[], numCarousels: number): T[][] {
+  const result: T[][] = Array.from({ length: numCarousels }, () => []);
+  items.forEach((item, index) => {
+    result[index % numCarousels].push(item);
+  });
+  return result;
+}
 
 // For 2 carousels (mobile): combine images
 const mobileCarousel1 = [...robotImages, ...robotImages2];
 const mobileCarousel2 = [...robotImages3, ...robotImages4];
 
-// For 3 carousels (tablets): redistribute robotImages4 equally to first 3
-// Split robotImages4 (7 images) into 3 parts: 2, 2, 3
-const tabletCarousel1 = [...robotImages, ...robotImages4.slice(0, 2)];
-const tabletCarousel2 = [...robotImages2, ...robotImages4.slice(2, 4)];
-const tabletCarousel3 = [...robotImages3, ...robotImages4.slice(4, 7)];
+// For 3 carousels (tablets): redistribute robotImages4 equally across first 3 carousels
+const distributedImages4 = distributeItems(robotImages4, 3);
+const tabletCarousel1 = [...robotImages, ...distributedImages4[0]];
+const tabletCarousel2 = [...robotImages2, ...distributedImages4[1]];
+const tabletCarousel3 = [...robotImages3, ...distributedImages4[2]];
 
 ---
 
