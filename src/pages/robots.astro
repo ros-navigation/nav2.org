@@ -1,0 +1,72 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+import { robotImages, robotImages2, robotImages3, robotImages4 } from "../content/contentItems/robots";
+import ReactSwiper from "@components/ReactSwiper.tsx";
+
+// Helper function to evenly distribute items across carousels
+function distributeItems<T>(items: T[], numCarousels: number): T[][] {
+  const result: T[][] = Array.from({ length: numCarousels }, () => []);
+  items.forEach((item, index) => {
+    result[index % numCarousels].push(item);
+  });
+  return result;
+}
+
+// For 2 carousels (mobile): combine images
+const mobileCarousel1 = [...robotImages, ...robotImages2];
+const mobileCarousel2 = [...robotImages3, ...robotImages4];
+
+// For 3 carousels (tablets): redistribute robotImages4 equally across first 3 carousels
+const distributedImages4 = distributeItems(robotImages4, 3);
+const tabletCarousel1 = [...robotImages, ...distributedImages4[0]];
+const tabletCarousel2 = [...robotImages2, ...distributedImages4[1]];
+const tabletCarousel3 = [...robotImages3, ...distributedImages4[2]];
+
+---
+
+<Layout title="Robots Using">
+  <Container>
+    <div class="flex justify-center mt-8">
+      <h1 class="text-center font-medium text-5xl text-white bg-black rounded-lg px-6 py-4">Robots Using</h1>
+    </div>    
+    {/* Mobile: 2 carousels */}
+    <div class="md:hidden grid grid-cols-2 gap-4 py-8 overflow-hidden h-[40vh]">
+      <div>
+        <ReactSwiper client:load images={mobileCarousel1} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={mobileCarousel2} direction="down" />
+      </div>
+    </div>
+
+    {/* Tablet: 3 carousels */}
+    <div class="hidden md:grid lg:hidden md:h-screen grid-cols-3 gap-4 py-8 overflow-hidden">
+      <div>
+        <ReactSwiper client:load images={tabletCarousel1} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={tabletCarousel2} direction="down" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={tabletCarousel3} direction="up" />
+      </div>
+    </div>
+
+    {/* Desktop: 4 carousels */}
+    <div class="hidden lg:grid lg:h-screen grid-cols-4 gap-4 py-8 overflow-hidden">
+      <div>
+        <ReactSwiper client:load images={robotImages} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages2} direction="down" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages3} direction="up" />
+      </div>
+      <div>
+        <ReactSwiper client:load images={robotImages4} direction="down" />
+      </div>
+    </div>
+  </Container>
+</Layout>

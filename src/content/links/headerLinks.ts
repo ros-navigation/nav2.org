@@ -33,7 +33,7 @@ const headerLinks = [
     path: "#",
     children: [
       { title: "Contact", path: "https://docs.nav2.org/about/index.html" },
-      { title: "Robots", path: "https://docs.nav2.org/about/robots.html" },
+      { title: "Robots", path: "/robots" },
     ]
   },
 ];
