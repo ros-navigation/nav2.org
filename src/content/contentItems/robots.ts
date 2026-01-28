@@ -95,6 +95,11 @@ export const robotImages2 = [
     src: "https://docs.nav2.org/_images/tb4.png",
     alt: "Tb4",
     url: "https://clearpathrobotics.com/turtlebot-4/",
+  },
+  {
+    src: "https://docs.nav2.org/_images/g1.png",
+    alt: "Unitree G1",
+    url: "https://www.unitree.com/",
   }
 ];
 
@@ -133,6 +138,16 @@ export const robotImages3 = [
     src: "https://docs.nav2.org/_images/tb3.png",
     alt: "Tb3",
     url: "https://github.com/ROBOTIS-GIT/turtlebot3",
+  },
+  {
+    src: "https://docs.nav2.org/_images/go2.png",
+    alt: "Unitree Go2",
+    url: "https://www.unitree.com/",
+  },
+  {
+    src: "https://docs.nav2.org/_images/barnowl.png",
+    alt: "Barn Owl",
+    url: "https://barnowlag.com/",
   }
 ];
 
@@ -171,5 +186,10 @@ export const robotImages4 = [
     src: "https://docs.nav2.org/_images/rosbot_xl.png",
     alt: "Rosbot Xl",
     url: "https://github.com/husarion/rosbot-xl-autonomy"
+  },
+  {
+    src: "https://docs.nav2.org/_images/saxion.jpeg",
+    alt: "Saxion",
+    url: "https://www.saxion.nl/",
   }
 ]; 
