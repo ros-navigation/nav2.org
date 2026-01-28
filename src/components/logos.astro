@@ -1,6 +1,7 @@
 ---
 // @ts-ignore
 import { Picture } from "astro:assets";
+import Link from "@components/ui/link.astro";
 import ToyotaIcon from "assets/Toyota_logo.png";
 import Kiwibot from "assets/Kiwibot.png";
 import LG from "assets/LG_Logo.png";
@@ -105,5 +106,17 @@ const logoTitle = "Companies Using Nav2";
         ))
       }
     </div>
+  </div>
+  <div class="mt-5">
+    <Link
+      size="lg"
+      style="primary"
+      rel="noopener"
+      class="flex gap-1 items-center justify-center"
+      target="_blank"
+      href="https://docs.nav2.org/about/robots.html"
+    >
+      See All Robots Using Nav2
+    </Link>
   </div>
 </div>
