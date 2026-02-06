@@ -30,43 +30,63 @@ const tabletCarousel3 = [...robotImages3, ...distributedImages4[2]];
     <div class="flex justify-center mt-8">
       <h1 class="text-center font-medium text-5xl text-white bg-black rounded-lg px-6 py-4">Robots Using</h1>
     </div>    
-    {/* Mobile: 2 carousels */}
-    <div class="md:hidden grid grid-cols-2 gap-4 py-8 overflow-hidden h-[40vh]">
-      <div>
-        <ReactSwiper client:load images={mobileCarousel1} direction="up" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={mobileCarousel2} direction="down" />
-      </div>
+    {/* Mobile: 2 horizontal rows */}
+    <div class="md:hidden flex flex-col gap-4 py-8 overflow-x-hidden">
+      <ReactSwiper
+        client:load
+        images={mobileCarousel1}
+        direction="left"
+        itemClassName="flex-none w-40 mr-3"
+      />
+      <ReactSwiper
+        client:load
+        images={mobileCarousel2}
+        direction="right"
+        itemClassName="flex-none w-40 mr-3"
+      />
     </div>
 
-    {/* Tablet: 3 carousels */}
-    <div class="hidden md:grid lg:hidden md:h-screen grid-cols-3 gap-4 py-8 overflow-hidden">
-      <div>
-        <ReactSwiper client:load images={tabletCarousel1} direction="up" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={tabletCarousel2} direction="down" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={tabletCarousel3} direction="up" />
-      </div>
+    {/* Tablet: 3 horizontal rows */}
+    <div class="hidden md:flex lg:hidden flex-col gap-5 py-8 overflow-x-hidden">
+      <ReactSwiper
+        client:load
+        images={tabletCarousel1}
+        direction="left"
+      />
+      <ReactSwiper
+        client:load
+        images={tabletCarousel2}
+        direction="right"
+      />
+      <ReactSwiper
+        client:load
+        images={tabletCarousel3}
+        direction="left"
+      />
     </div>
 
-    {/* Desktop: 4 carousels */}
-    <div class="hidden lg:grid lg:h-screen grid-cols-4 gap-4 py-8 overflow-hidden">
-      <div>
-        <ReactSwiper client:load images={robotImages} direction="up" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={robotImages2} direction="down" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={robotImages3} direction="up" />
-      </div>
-      <div>
-        <ReactSwiper client:load images={robotImages4} direction="down" />
-      </div>
+    {/* Desktop: 4 horizontal rows */}
+    <div class="hidden lg:flex flex-col gap-6 py-8 overflow-x-hidden">
+      <ReactSwiper
+        client:load
+        images={robotImages}
+        direction="left"
+      />
+      <ReactSwiper
+        client:load
+        images={robotImages2}
+        direction="right"
+      />
+      <ReactSwiper
+        client:load
+        images={robotImages3}
+        direction="left"
+      />
+      <ReactSwiper
+        client:load
+        images={robotImages4}
+        direction="right"
+      />
     </div>
   </Container>
 </Layout>
