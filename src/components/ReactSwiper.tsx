@@ -40,7 +40,7 @@ export default function SwipeCarousel({
     const content = container.children[0] as HTMLElement | undefined;
     if (!content) return;
 
-    const updateRowHeightCap = () => {
+    const updateRowHeight = () => {
       // Measure only the non-duplicate images to avoid double counting.
       const imgs = Array.from(
         container.querySelectorAll<HTMLImageElement>(
@@ -55,11 +55,12 @@ export default function SwipeCarousel({
       if (heights.length === 0) return;
 
       const minHeight = Math.min(...heights);
-      const cappedMaxHeight = minHeight + 50;
+      // Use the minimum height, but never less than 160px base minimum
+      const finalHeight = Math.max(minHeight, 160);
 
       container.style.setProperty(
-        '--row-max-image-height',
-        `${Math.round(cappedMaxHeight)}px`
+        '--row-image-height',
+        `${Math.round(finalHeight)}px`
       );
     };
 
@@ -83,10 +84,10 @@ export default function SwipeCarousel({
     };
 
     applyAnimation();
-    updateRowHeightCap();
+    updateRowHeight();
 
-    // Recompute the cap as images load in.
-    const onImgLoad = () => updateRowHeightCap();
+    // Recompute height as images load in.
+    const onImgLoad = () => updateRowHeight();
     const imgsAll = Array.from(
       container.querySelectorAll<HTMLImageElement>('img[data-carousel-img="true"]')
     );
@@ -96,7 +97,7 @@ export default function SwipeCarousel({
     if (typeof ResizeObserver !== 'undefined') {
       const ro = new ResizeObserver(() => {
         applyAnimation();
-        updateRowHeightCap();
+        updateRowHeight();
       });
       ro.observe(content);
       return () => {
@@ -146,7 +147,7 @@ export default function SwipeCarousel({
         }
 
         .carousel-img {
-          max-height: var(--row-max-image-height);
+          height: var(--row-image-height, 160px);
         }
       `}</style>
       <div 
