@@ -14,13 +14,15 @@ const DOCS = "Docs";
   <header class="flex flex-col lg:flex-row justify-between items-center">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between z-50">
-        <Picture
-          src={StickerNavLogo}
-          alt="Nav Balloon Logo"
-          width="200"
-          loading="eager"
-          format="avif"
-        />
+        <a href="/">
+          <Picture
+            src={StickerNavLogo}
+            alt="Nav Balloon Logo"
+            width="200"
+            loading="eager"
+            format="avif"
+          />
+        </a>
         <div class="block lg:hidden bg-cyan-400/70 z-50">
           <MenuIcon class="w-4 h-4 text-gray-800" />
         </div>
