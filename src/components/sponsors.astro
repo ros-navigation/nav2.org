@@ -4,9 +4,9 @@ import { Picture } from "astro:assets";
 import Dexory from "assets/dexory_logo.png";
 import NVIDIA from "assets/NVIDIA_logo.png";
 import Polymath from "assets/polymath.png";
+import Intel from "assets/Intel_logo.png";
 import AMD from  "assets/AMD_Logo.png";
 import Stereolabs from "assets/stereolabs_logo.png";
-import ThreeLaws from "assets/3laws_logo.png";
 import Staer from "assets/Staer_logo.png";
 import BarnOwl from "assets/barnowl.png";
 import Botronics from "assets/Botronics.png";
@@ -61,6 +61,15 @@ const getGoldSponsorWidth = () => {
           format="avif"
         />
       </a>
+      <a href="https://www.intel.com/" class="gold-sponsor">
+        <Picture
+          alt="Intel"
+          src={Intel}
+          width={getGoldSponsorWidth()}
+          loading="eager"
+          format="avif"
+        />
+      </a>
       <a href="https://www.amd.com/en/solutions/industrial/robotics.html" class="gold-sponsor">
         <Picture
           alt="AMD"
@@ -82,15 +91,6 @@ const getGoldSponsorWidth = () => {
           format="avif"
         />
       </a>
-      <a href="https://3laws.io/">
-        <Picture
-          alt="3Laws Robotics"
-          src={ThreeLaws}
-          width="200"
-          loading="eager"
-          format="avif"
-        />
-      </a>
       <a href="https://staer.ai/">
         <Picture
           alt="Staer AI"
@@ -106,7 +106,7 @@ const getGoldSponsorWidth = () => {
     </h3>
     <div class="flex justify-between items-center gap-8 mt-5">
       <Picture
-        alt="BarnOwl"
+        alt="BOPA Precision Agriculture"
         src={BarnOwl}
         width="125"
         loading="eager"
