@@ -61,11 +61,11 @@ const getGoldSponsorWidth = () => {
           format="avif"
         />
       </a>
-      <a href="https://www.intel.com/" class="gold-sponsor">
+      <a href="https://www.intel.com/" class="gold-sponsor" data-scale="0.8">
         <Picture
           alt="Intel"
           src={Intel}
-          width={getGoldSponsorWidth()}
+          width={getGoldSponsorWidth() * 0.8}
           loading="eager"
           format="avif"
         />
@@ -144,7 +144,8 @@ const getGoldSponsorWidth = () => {
     if (isSmallDevice) targetWidth = 90;
     const goldSponsorImgs = document.querySelectorAll('.gold-sponsor img');
     goldSponsorImgs.forEach((img) => {
-      (img as HTMLImageElement).style.width = `${targetWidth}px`;
+      const scale = Number(img.closest<HTMLElement>('.gold-sponsor')?.dataset.scale ?? 1);
+      (img as HTMLImageElement).style.width = `${targetWidth * scale}px`;
     });
   }
 
